@@ -38,12 +38,8 @@ CREATE TABLE orders (
                         CONSTRAINT uk_idem UNIQUE (idempotency_key)
 );
 
--- =========================
--- INITIAL USERS (bcrypt hashes)
--- admin / alice / bob
--- =========================
 INSERT INTO customers(username, password, roles) VALUES
-                                                     ('admin', '$2a$10$UWegJWLhz1TzHwPgxc6h8upvX9Zi42pqR6mqKa92u5TrBjzQSd1ke', 'ROLE_ADMIN'), -- BCrypt'e dönerken burayı değiştireceksiniz.
+                                                     ('admin', '$2a$10$UWegJWLhz1TzHwPgxc6h8upvX9Zi42pqR6mqKa92u5TrBjzQSd1ke', 'ROLE_ADMIN'),
                                                      ('alice', '{noop}alice123', 'ROLE_CUSTOMER'),
                                                      ('bob',   '{noop}bob123', 'ROLE_CUSTOMER');
 
